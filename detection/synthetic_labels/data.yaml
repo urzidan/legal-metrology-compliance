@@ -1,0 +1,5 @@
+train: ./images
+val: ./images
+
+nc: 4
+names: ['MRP', 'quantity', 'manufacturer', 'date']

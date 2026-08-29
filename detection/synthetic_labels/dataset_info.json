@@ -1,0 +1,2302 @@
+[
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0000.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0000.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          298.0,
+          60.0,
+          408.0,
+          102.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          77.0,
+          218.0,
+          204.0,
+          262.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          59.0,
+          291.0,
+          229.0,
+          330.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          293.0,
+          51.0,
+          448.0,
+          100.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0001.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0001.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          171.0,
+          63.0,
+          286.0,
+          90.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          265.0,
+          172.0,
+          320.0,
+          195.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          121.0,
+          278.0,
+          307.0,
+          318.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          141.0,
+          50.0,
+          298.0,
+          91.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0002.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0002.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          248.0,
+          96.0,
+          338.0,
+          146.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          255.0,
+          178.0,
+          342.0,
+          226.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          172.0,
+          131.0,
+          314.0,
+          169.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          149.0,
+          93.0,
+          246.0,
+          119.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0003.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0003.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          111.0,
+          218.0,
+          177.0,
+          244.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          312.0,
+          227.0,
+          464.0,
+          267.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          295.0,
+          145.0,
+          374.0,
+          183.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          274.0,
+          294.0,
+          408.0,
+          321.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0004.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0004.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          17.0,
+          102.0,
+          175.0,
+          130.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          287.0,
+          274.0,
+          411.0,
+          309.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          206.0,
+          230.0,
+          341.0,
+          262.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          22.0,
+          111.0,
+          216.0,
+          135.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0005.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0005.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          117.0,
+          216.0,
+          203.0,
+          238.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          85.0,
+          81.0,
+          222.0,
+          102.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          39.0,
+          318.0,
+          113.0,
+          338.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          245.0,
+          95.0,
+          349.0,
+          121.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0006.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0006.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          79.0,
+          151.0,
+          206.0,
+          180.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          106.0,
+          55.0,
+          187.0,
+          87.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          32.0,
+          152.0,
+          146.0,
+          195.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          53.0,
+          53.0,
+          151.0,
+          90.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0007.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0007.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          146.0,
+          187.0,
+          244.0,
+          208.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          224.0,
+          300.0,
+          318.0,
+          336.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          23.0,
+          201.0,
+          128.0,
+          249.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          52.0,
+          301.0,
+          102.0,
+          327.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0008.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0008.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          170.0,
+          29.0,
+          354.0,
+          65.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          72.0,
+          288.0,
+          253.0,
+          336.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          7.0,
+          122.0,
+          99.0,
+          166.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          211.0,
+          25.0,
+          355.0,
+          61.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0009.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0009.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          175.0,
+          121.0,
+          256.0,
+          167.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          122.0,
+          281.0,
+          214.0,
+          311.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          307.0,
+          266.0,
+          442.0,
+          309.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          111.0,
+          165.0,
+          282.0,
+          208.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0010.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0010.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          93.0,
+          59.0,
+          229.0,
+          84.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          35.0,
+          39.0,
+          215.0,
+          76.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          188.0,
+          96.0,
+          283.0,
+          123.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          198.0,
+          7.0,
+          326.0,
+          51.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0011.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0011.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          90.0,
+          192.0,
+          243.0,
+          227.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          184.0,
+          137.0,
+          359.0,
+          184.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          296.0,
+          265.0,
+          408.0,
+          287.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          202.0,
+          109.0,
+          265.0,
+          129.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0012.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0012.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          294.0,
+          104.0,
+          425.0,
+          139.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          267.0,
+          37.0,
+          463.0,
+          77.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          105.0,
+          120.0,
+          176.0,
+          158.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          157.0,
+          23.0,
+          345.0,
+          63.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0013.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0013.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          279.0,
+          28.0,
+          374.0,
+          69.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          32.0,
+          316.0,
+          131.0,
+          342.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          282.0,
+          207.0,
+          419.0,
+          230.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          2.0,
+          269.0,
+          105.0,
+          313.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0014.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0014.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          70.0,
+          247.0,
+          251.0,
+          285.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          226.0,
+          113.0,
+          279.0,
+          140.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          182.0,
+          180.0,
+          245.0,
+          228.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          248.0,
+          230.0,
+          307.0,
+          253.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0015.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0015.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          43.0,
+          68.0,
+          149.0,
+          93.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          162.0,
+          200.0,
+          220.0,
+          224.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          77.0,
+          224.0,
+          192.0,
+          265.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          49.0,
+          191.0,
+          227.0,
+          220.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0016.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0016.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          172.0,
+          261.0,
+          302.0,
+          304.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          144.0,
+          117.0,
+          305.0,
+          157.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          236.0,
+          76.0,
+          366.0,
+          121.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          300.0,
+          185.0,
+          411.0,
+          217.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0017.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0017.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          202.0,
+          220.0,
+          367.0,
+          245.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          134.0,
+          67.0,
+          193.0,
+          87.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          300.0,
+          96.0,
+          452.0,
+          128.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          177.0,
+          65.0,
+          304.0,
+          96.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0018.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0018.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          90.0,
+          214.0,
+          184.0,
+          259.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          309.0,
+          3.0,
+          373.0,
+          30.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          36.0,
+          14.0,
+          202.0,
+          34.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          221.0,
+          85.0,
+          299.0,
+          112.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0019.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0019.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          279.0,
+          161.0,
+          420.0,
+          181.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          257.0,
+          250.0,
+          355.0,
+          291.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          180.0,
+          291.0,
+          237.0,
+          330.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          153.0,
+          31.0,
+          302.0,
+          56.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0020.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0020.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          221.0,
+          298.0,
+          410.0,
+          331.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          268.0,
+          188.0,
+          392.0,
+          226.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          183.0,
+          185.0,
+          282.0,
+          226.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          153.0,
+          218.0,
+          235.0,
+          252.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0021.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0021.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          53.0,
+          216.0,
+          170.0,
+          261.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          116.0,
+          247.0,
+          177.0,
+          281.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          168.0,
+          315.0,
+          313.0,
+          356.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          115.0,
+          58.0,
+          235.0,
+          96.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0022.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0022.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          184.0,
+          10.0,
+          317.0,
+          49.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          72.0,
+          312.0,
+          228.0,
+          360.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          312.0,
+          15.0,
+          399.0,
+          37.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          32.0,
+          207.0,
+          171.0,
+          244.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0023.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0023.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          207.0,
+          108.0,
+          291.0,
+          128.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          300.0,
+          63.0,
+          368.0,
+          113.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          295.0,
+          72.0,
+          366.0,
+          111.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          296.0,
+          93.0,
+          430.0,
+          140.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0024.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0024.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          111.0,
+          27.0,
+          202.0,
+          55.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          85.0,
+          222.0,
+          190.0,
+          246.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          127.0,
+          64.0,
+          224.0,
+          97.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          141.0,
+          40.0,
+          215.0,
+          75.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0025.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0025.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          275.0,
+          8.0,
+          343.0,
+          39.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          298.0,
+          79.0,
+          451.0,
+          124.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          43.0,
+          234.0,
+          189.0,
+          262.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          201.0,
+          160.0,
+          272.0,
+          190.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0026.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0026.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          94.0,
+          17.0,
+          175.0,
+          54.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          271.0,
+          8.0,
+          337.0,
+          50.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          311.0,
+          45.0,
+          361.0,
+          82.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          71.0,
+          168.0,
+          213.0,
+          191.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0027.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0027.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          166.0,
+          17.0,
+          271.0,
+          54.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          129.0,
+          177.0,
+          215.0,
+          208.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          36.0,
+          25.0,
+          177.0,
+          59.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          23.0,
+          297.0,
+          192.0,
+          317.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0028.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0028.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          213.0,
+          85.0,
+          398.0,
+          132.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          211.0,
+          36.0,
+          359.0,
+          76.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          283.0,
+          127.0,
+          402.0,
+          155.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          235.0,
+          218.0,
+          364.0,
+          241.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0029.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0029.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          192.0,
+          77.0,
+          272.0,
+          110.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          51.0,
+          29.0,
+          119.0,
+          69.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          270.0,
+          106.0,
+          420.0,
+          142.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          130.0,
+          255.0,
+          182.0,
+          298.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0030.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0030.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          259.0,
+          236.0,
+          388.0,
+          272.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          106.0,
+          179.0,
+          164.0,
+          212.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          54.0,
+          227.0,
+          142.0,
+          254.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          91.0,
+          294.0,
+          233.0,
+          329.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0031.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0031.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          207.0,
+          30.0,
+          336.0,
+          66.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          219.0,
+          176.0,
+          370.0,
+          219.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          114.0,
+          221.0,
+          305.0,
+          249.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          27.0,
+          63.0,
+          169.0,
+          110.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0032.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0032.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          220.0,
+          17.0,
+          375.0,
+          49.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          59.0,
+          291.0,
+          255.0,
+          336.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          111.0,
+          159.0,
+          304.0,
+          196.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          24.0,
+          263.0,
+          162.0,
+          311.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0033.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0033.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          152.0,
+          240.0,
+          289.0,
+          283.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          95.0,
+          49.0,
+          240.0,
+          80.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          168.0,
+          313.0,
+          348.0,
+          362.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          64.0,
+          56.0,
+          194.0,
+          100.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0034.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0034.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          253.0,
+          103.0,
+          386.0,
+          142.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          4.0,
+          185.0,
+          55.0,
+          227.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          260.0,
+          193.0,
+          387.0,
+          215.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          280.0,
+          290.0,
+          471.0,
+          311.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0035.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0035.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          240.0,
+          217.0,
+          409.0,
+          248.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          68.0,
+          260.0,
+          133.0,
+          289.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          289.0,
+          180.0,
+          483.0,
+          217.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          35.0,
+          182.0,
+          85.0,
+          220.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0036.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0036.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          229.0,
+          118.0,
+          405.0,
+          145.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          178.0,
+          317.0,
+          309.0,
+          346.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          16.0,
+          8.0,
+          117.0,
+          41.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          120.0,
+          291.0,
+          291.0,
+          325.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0037.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0037.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          142.0,
+          42.0,
+          296.0,
+          71.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          23.0,
+          98.0,
+          164.0,
+          144.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          289.0,
+          206.0,
+          371.0,
+          245.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          50.0,
+          180.0,
+          165.0,
+          227.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0038.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0038.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          36.0,
+          88.0,
+          115.0,
+          116.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          293.0,
+          180.0,
+          454.0,
+          206.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          126.0,
+          167.0,
+          202.0,
+          194.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          320.0,
+          112.0,
+          520.0,
+          140.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0039.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0039.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          172.0,
+          127.0,
+          259.0,
+          154.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          117.0,
+          244.0,
+          221.0,
+          294.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          251.0,
+          306.0,
+          403.0,
+          344.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          207.0,
+          206.0,
+          360.0,
+          239.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0040.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0040.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          284.0,
+          38.0,
+          376.0,
+          86.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          255.0,
+          297.0,
+          393.0,
+          347.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          134.0,
+          217.0,
+          280.0,
+          246.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          44.0,
+          131.0,
+          231.0,
+          166.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0041.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0041.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          254.0,
+          151.0,
+          309.0,
+          181.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          13.0,
+          299.0,
+          157.0,
+          346.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          11.0,
+          241.0,
+          127.0,
+          261.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          40.0,
+          318.0,
+          128.0,
+          354.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0042.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0042.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          92.0,
+          183.0,
+          152.0,
+          203.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          17.0,
+          269.0,
+          75.0,
+          289.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          227.0,
+          275.0,
+          410.0,
+          317.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          267.0,
+          62.0,
+          329.0,
+          102.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0043.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0043.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          61.0,
+          104.0,
+          113.0,
+          148.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          2.0,
+          167.0,
+          67.0,
+          195.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          312.0,
+          296.0,
+          448.0,
+          319.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          158.0,
+          17.0,
+          223.0,
+          54.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0044.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0044.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          70.0,
+          114.0,
+          196.0,
+          148.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          277.0,
+          219.0,
+          424.0,
+          241.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          291.0,
+          283.0,
+          479.0,
+          306.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          181.0,
+          251.0,
+          251.0,
+          292.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0045.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0045.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          314.0,
+          168.0,
+          495.0,
+          216.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          251.0,
+          265.0,
+          416.0,
+          305.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          232.0,
+          244.0,
+          422.0,
+          278.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          294.0,
+          172.0,
+          375.0,
+          215.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0046.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0046.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          62.0,
+          6.0,
+          116.0,
+          49.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          284.0,
+          202.0,
+          359.0,
+          236.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          284.0,
+          177.0,
+          383.0,
+          210.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          10.0,
+          49.0,
+          100.0,
+          71.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0047.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0047.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          4.0,
+          38.0,
+          121.0,
+          79.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          104.0,
+          184.0,
+          242.0,
+          220.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          122.0,
+          272.0,
+          283.0,
+          296.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          304.0,
+          125.0,
+          461.0,
+          151.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0048.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0048.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          181.0,
+          189.0,
+          282.0,
+          234.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          179.0,
+          300.0,
+          286.0,
+          337.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          110.0,
+          101.0,
+          283.0,
+          134.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          135.0,
+          118.0,
+          192.0,
+          138.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  },
+  {
+    "image_path": "synthetic_labels\\images\\synthetic_0049.jpg",
+    "label_path": "synthetic_labels\\labels\\synthetic_0049.txt",
+    "annotations": [
+      {
+        "class": 0,
+        "bbox": [
+          71.0,
+          115.0,
+          158.0,
+          154.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 1,
+        "bbox": [
+          197.0,
+          115.0,
+          307.0,
+          149.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 2,
+        "bbox": [
+          187.0,
+          47.0,
+          377.0,
+          83.0
+        ],
+        "conf": 1.0
+      },
+      {
+        "class": 3,
+        "bbox": [
+          100.0,
+          22.0,
+          163.0,
+          61.0
+        ],
+        "conf": 1.0
+      }
+    ]
+  }
+]
