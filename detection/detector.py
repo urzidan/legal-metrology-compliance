@@ -8,12 +8,12 @@ import numpy as np
 from typing import Union, List, Dict
 
 class YOLOv8Detector:
-    def __init__(self, model_path: str = "yolov8n.pt"):
+    def __init__(self, model_path: str = "runs/detect/train2/weights/best.pt"):
         """
         Initialize YOLOv8 detector
 
         Args:
-            model_path: Path to YOLOv8 model file (default: yolov8n.pt for nano model)
+            model_path: Path to YOLOv8 model file (default: runs/detect/train2/weights/best.pt for trained model)
         """
         self.model = YOLO(model_path)
         # Class mapping: 0=MRP, 1=quantity, 2=manufacturer, 3=date
@@ -66,7 +66,7 @@ class YOLOv8Detector:
 
 # Convenience function for simple usage
 def detect_label_regions(image: Union[str, np.ndarray],
-                        model_path: str = "yolov8n.pt") -> List[Dict]:
+                        model_path: str = "runs/detect/train2/weights/best.pt") -> List[Dict]:
     """
     Simple function to detect label regions
 

@@ -1,0 +1,190 @@
+"""
+Integration Demo: Detection (YOU) -> OCR (TM2) Pipeline
+Shows how the detection component's output flows into the OCR component
+"""
+
+import numpy as np
+import cv2
+import os
+import sys
+
+# Add processing directory to path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+# Try to import from detection component (if available)
+try:
+    sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'detection'))
+    from detection.detector import detect_label_regions, YOLOv8Detector
+    DETECTION_AVAILABLE = True
+except ImportError:
+    DETECTION_AVAILABLE = False
+    print("Warning: Detection component not found. Using mock detections for demo.")
+
+from ocr_engine import OCREngine, MockOCREngine, process_image_region
+
+def create_test_label_image():
+    """Create a realistic test label image for demonstration"""
+    # Create a white label background
+    label = np.ones((300, 400, 3), dtype=np.uint8) * 255
+
+    # Add some text-like regions (we'll draw rectangles to simulate text areas)
+    # MRP region (top-left)
+    cv2.rectangle(label, (20, 20), (180, 60), (200, 200, 200), -1)  # Light gray background
+    cv2.putText(label, "MRP: ₹199.00", (30, 45), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 2)
+
+    # Quantity region (below MRP)
+    cv2.rectangle(label, (20, 70), (180, 110), (200, 200, 200), -1)
+    cv2.putText(label, "Qty: 500 g", (30, 95), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 2)
+
+    # Manufacturer region (below quantity)
+    cv2.rectangle(label, (20, 120), (250, 160), (200, 200, 200), -1)
+    cv2.putText(label, "Manuf: ABC Foods Ltd", (30, 145), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2)
+
+    # Date region (bottom-left)
+    cv2.rectangle(label, (20, 200), (150, 240), (200, 200, 200), -1)
+    cv2.putText(label, "Exp: 03/24", (30, 225), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2)
+
+    # Add some noise and imperfections to make it realistic
+    noise = np.random.randint(-10, 10, label.shape, dtype=np.int16)
+    label = np.clip(label.astype(np.int16) + noise, 0, 255).astype(np.uint8)
+
+    return label
+
+def main():
+    print("=" * 70)
+    print("Legal Metrology Compliance: Detection -> OCR Integration Demo")
+    print("=" * 70)
+
+    # Step 1: Create or load test image
+    print("\n1. Creating test label image...")
+    test_image = create_test_label_image()
+    image_path = "test_label_demo.jpg"
+    cv2.imwrite(image_path, test_image)
+    print(f"   Saved test image to: {image_path}")
+
+    # Step 2: Run Detection Component (YOU)
+    print("\n2. Running Detection Component (YOU)...")
+    if DETECTION_AVAILABLE:
+        try:
+            # Try to use the actual detection component
+            detector = YOLOv8Detector()
+            detections = detector.detect_and_format(test_image)
+            print(f"   Detector found {len(detections)} regions:")
+            for i, det in enumerate(detections):
+                class_name = ["MRP", "quantity", "manufacturer", "date"][det["class"]] if det["class"] < 4 else f"unknown({det['class']})"
+                print(f"     {i+1}. Class {det['class']} ({class_name}): bbox={det['bbox']}, conf={det['conf']:.3f}")
+        except Exception as e:
+            print(f"   Error running actual detector: {e}")
+            print("   Falling back to simulated detections...")
+            detections = simulate_detections(test_image)
+    else:
+        print("   Detection component not available, using simulated detections...")
+        detections = simulate_detections(test_image)
+
+    # Step 3: Run OCR Component (TM2) on each detection
+    print("\n3. Running OCR Component (TM2) on each detection...")
+    ocr_results = []
+    engine = MockOCREngine()
+
+    for i, det in enumerate(detections):
+        class_id = det["class"]
+        bbox = tuple(det["bbox"])  # Convert list to tuple
+        detection_conf = det["conf"]
+
+        # Process the region with OCR
+        ocr_result = engine.process_region(test_image, bbox=bbox)
+
+        # Combine detection and OCR results
+        combined_result = {
+            "detection": det,
+            "ocr": ocr_result,
+            "field_name": ["MRP", "quantity", "manufacturer", "date"][class_id] if class_id < 4 else f"unknown_{class_id}"
+        }
+        ocr_results.append(combined_result)
+
+        print(f"   Region {i+1} ({combined_result['field_name']}):")
+        print(f"     Detection: class={class_id}, conf={detection_conf:.3f}")
+        print(f"     OCR: text='{ocr_result['text']}', conf={ocr_result['confidence']:.3f}, engine={ocr_result['engine']}")
+
+    # Step 4: Show what would be passed to Validation Component (TM3)
+    print("\n4. Prepared for Validation Component (TM3)...")
+    validation_input = []
+    for result in ocr_results:
+        field_name = result["field_name"]
+        validation_input.append({
+            "field": field_name,
+            "value": result["ocr"]["text"],
+            "confidence": result["ocr"]["confidence"]
+        })
+        print(f"   {field_name}: '{validation_input[-1]['value']}' (conf={validation_input[-1]['confidence']:.2f})")
+
+    # Step 5: Create visualization
+    print("\n5. Creating visualization...")
+    vis_image = test_image.copy()
+
+    # Draw detection boxes
+    colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0)]  # BGR: Blue, Green, Red, Yellow
+    for i, result in enumerate(ocr_results):
+        det = result["detection"]
+        x1, y1, x2, y2 = det["bbox"]
+        class_id = det["class"]
+        color = colors[class_id % len(colors)]
+
+        # Draw bounding box
+        cv2.rectangle(vis_image, (x1, y1), (x2, y2), color, 2)
+
+        # Add label
+        label_text = f"{['MRP','quantity','manufacturer','date'][class_id] if class_id < 4 else f'C{class_id}'} ({det['conf']:.2f})"
+        cv2.putText(vis_image, label_text, (x1, y1-10),
+                   cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+
+        # Add OCR result below the box
+        ocr_text = f"OCR: '{result['ocr']['text']}' ({result['ocr']['confidence']:.2f})"
+        cv2.putText(vis_image, ocr_text, (x1, y2+20),
+                   cv2.FONT_HERSHEY_SIMPLEX, 0.4, color, 1)
+
+    vis_path = "detection_ocr_visualization.jpg"
+    cv2.imwrite(vis_path, vis_image)
+    print(f"   Saved visualization to: {vis_path}")
+
+    # Step 6: Summary
+    print("\n" + "=" * 70)
+    print("INTEGRATION DEMO COMPLETE")
+    print("=" * 70)
+    print("\nFlow Summary:")
+    print("  1. Input Image -> Detection Component (YOU)")
+    print("     -> Returns: [{\"class\": 0, \"bbox\": [x1,y1,x2,y2], \"conf\": 0.92}, ...]")
+    print("  2. Detections -> OCR Component (TM2)")
+    print("     -> For each detection: crops region using bbox, applies Grayscale->CLAHE->Denoise->Tesseract")
+    print("     -> Returns: {\"text\": \"extracted text\", \"confidence\": 0.XX, \"engine\": \"tesseract\"}")
+    print("  3. OCR Results -> Validation Component (TM3)")
+    print("     -> Receives: [{\"field\": \"MRP\", \"text\": \"Rs.199.00\", \"confidence\": 0.95}, ...]")
+    print("\nKey Interfaces:")
+    print("  Detection -> OCR: Bounding box coordinates [x1,y1,x2,y2]")
+    print("  OCR -> Validation: Extracted text + confidence per field")
+    print("\nNext Steps:")
+    print("  - TM2 should implement their OCR processor in processing/")
+    print("  - TM6 will orchestrate the full pipeline: Detect -> OCR -> Validate -> Store")
+    print("  - Update memory.md after integration testing")
+    print("=" * 70)
+
+    # Cleanup
+    try:
+        os.remove(image_path)
+        os.remove(vis_path)
+    except:
+        pass
+
+def simulate_detections(image):
+    """Simulate detection results for demo purposes when actual detector not available"""
+    h, w = image.shape[:2]
+    # Return simulated detections for the four expected regions
+    return [
+        {"class": 0, "bbox": [20, 20, 180, 60], "conf": 0.92},   # MRP
+        {"class": 1, "bbox": [20, 70, 180, 110], "conf": 0.89},  # Quantity
+        {"class": 2, "bbox": [20, 120, 250, 160], "conf": 0.85}, # Manufacturer
+        {"class": 3, "bbox": [20, 200, 150, 240], "conf": 0.88}  # Date
+    ]
+
+if __name__ == "__main__":
+    main()
