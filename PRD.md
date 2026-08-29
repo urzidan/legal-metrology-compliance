@@ -1,234 +1,136 @@
-LegalMetro-Hackathon: Project Requirements
+# Project Requirements Document (PRD)
 
-Problem Statement
+## 1. Project Title
 
-Packaged commodities in India must comply with Legal Metrology (Packaged Commodities) Rules, 2011. Manual label verification is slow and error-prone for inspectors.
+Software System to Check Compliance of Packaged Commodities under Legal Metrology (Packaged Commodities) Rules, 2011 by Scanning Products, Images and Labels.
 
-Target Users
+---
 
-- Primary: Legal Metrology field inspectors (govt. officials)
-- Secondary: Retail QC teams, consumer groups, manufacturers
+## 2. Problem Statement
 
-Core Features (MVP)
+Develop an AI-assisted software system that can analyze packaged commodity images and labels and assist in checking whether the required declarations are present and properly represented according to the applicable Legal Metrology (Packaged Commodities) Rules, 2011 and subsequent applicable amendments/notifications.
 
-1. Image Input: Upload or camera capture (JPEG/PNG)
-2. YOLOv8 Detection: Find MRP, quantity, manufacturer, date regions
-3. OCR Extraction: Tesseract/EasyOCR on detected regions
-4. Rule Validation: Check:
-   - MRP format (must start with "₹" or "Rs.")
-   - Quantity format (number + valid unit: g, kg, ml, l)
-   - Manufacturer presence (non-empty)
-   - Date format (MM/YY or DD/MM/YY)
-5. Result Display: Pass/Fail with violations + annotated image
-6. History Log: SQLite storage of past inspections
+---
 
-Success Criteria for Demo
+## 3. Objective
 
-- Scan 5+ real product labels
-- Correctly validate MRP/quantity for ≥80% of samples
-- Clear UI showing pass/fail with visual annotations
+The system should:
 
-Architecture.md:
-LegalMetro-Hackathon: Architecture
+1. Accept images of packaged commodities.
+2. Detect relevant regions of the package.
+3. Extract text using OCR.
+4. Identify important declarations and product information.
+5. Determine which requirements are applicable.
+6. Validate extracted information against structured compliance rules.
+7. Identify missing, incorrect, or uncertain declarations.
+8. Generate an understandable compliance report.
+9. Provide visual evidence wherever possible.
 
-Data Flow
+---
 
-mermaid
-graph LR
-    A[Image Input] --> B[Preprocessing]
-    B --> C[YOLOv8 Detection]
-    C --> D[Region Cropping]
-    D --> E[OCR Processing]
-    E --> F[Rule Validation]
-    F --> G[Result Presentation]
-    F --> H[Storage]
+## 4. Target Users
 
-Component Responsibilities
+### Primary Users
 
-┌──────────────┬──────────────────────────────────────────┬─────────────────────────┐
-│    Folder    │              Responsibility              │        Your Tech        │
-├──────────────┼──────────────────────────────────────────┼─────────────────────────┤
-│ detection/   │ Find label regions (MRP, quantity, etc.) │ YOLOv8 (you)            │
-├──────────────┼──────────────────────────────────────────┼─────────────────────────┤
-│ processing/  │ Extract text from regions                │ Tesseract/EasyOCR (TM2) │
-├──────────────┼──────────────────────────────────────────┼─────────────────────────┤
-│ validation/  │ Check text against rules                 │ Regex/pint (TM3)        │
-├──────────────┼──────────────────────────────────────────┼─────────────────────────┤
-│ ui/          │ Show results & history                   │ Streamlit (TM4)         │
-├──────────────┼──────────────────────────────────────────┼─────────────────────────┤
-│ storage/     │ Save inspection logs                     │ SQLite (TM5)            │
-├──────────────┼──────────────────────────────────────────┼─────────────────────────┤
-│ integration/ │ Orchestrate pipeline                     │ Pure Python (TM6)       │
-└──────────────┴──────────────────────────────────────────┴─────────────────────────┘
+- Legal Metrology inspection teams
+- Government officers
+- Compliance teams
+- Manufacturers
+- Packers
+- Importers
 
-Technical Stack
+### Secondary Users
 
-- Detection: Ultralytics YOLOv8 (nano model)
-- OCR: Tesseract 5 + pytesseract OR easyocr
-- UI: Streamlit (fastest for hackathon demo)
-- Storage: SQLite (zero-config file DB)
-- Validation: Python regex + pint for units
+- Retailers
+- Consumers
+- Researchers
+- Educational institutions
 
-Rules.md:
-LegalMetro-Hackathon: Development Rules
+---
 
-General Principles
+## 5. Core System Flow
 
-1. Work in your folder only: Edit ONLY files in your assigned directory
-2. Small commits: e.g., fix: MRP regex allows spaces
-3. Pull before push: Always git pull origin main first
-4. Test locally: Run relevant tests before pushing
-5. Blocked >15 min?: Ping team in #hackathon channel
+Product Image
+↓
+Image Validation
+↓
+Image Preprocessing
+↓
+YOLO Detection
+↓
+Relevant Region Cropping
+↓
+OCR
+↓
+Text Processing
+↓
+Field Extraction
+↓
+Product/Category Identification
+↓
+Applicable Rule Selection
+↓
+Compliance Validation
+↓
+Compliance Report
 
-Language & Environment
+---
 
-- Python: 3.8+ (python --version)
-- Deps: pip install -r requirements.txt
-- VS Code: Use built-in terminal (Ctrl+`)
-- Git: Never edit .git/ folder
+## 6. Core Features
 
-Component-Specific Rules
+### 6.1 Product Scanning
 
-Detection (detection/ - YOU)
+- Upload product images.
+- Capture images using a camera.
+- Support multiple images for different sides of a package.
+- Validate image format and quality.
 
-- Use yolov8n.pt (nano) for speed
-- Return format: [{"class": 0, "bbox": [x1,y1,x2,y2], "conf": 0.92}, ...]
-- Never hardcode image paths - accept numpy array or file path
+### 6.2 Computer Vision
 
-OCR (processing/ - TM2)
+The system should use computer vision to:
 
-- Pipeline: Grayscale → CLAHE → Denoise → OCR
-- Return: {"text": "₹ 199.00", "confidence": 0.87, "engine": "tesseract"}
-- On failure: Return empty string + confidence 0.0
+- Detect the package.
+- Detect relevant declaration regions.
+- Locate text/label regions.
+- Crop relevant areas.
+- Handle rotation where possible.
+- Handle perspective distortion where possible.
 
-Validation (validation/ - TM3)
+### 6.3 OCR
 
-- Rules as JSON in validation/rules/:
-{ "id": "mrp_format", "pattern": "₹\\s*\\d+(\\.\\d+)?", "severity": "critical" }
-- Output: { "passed": bool, "violations": [{ "field": "mrp", "message": "..." }] }
+Extract text from relevant package regions.
 
-UI (ui/ - TM4)
+Potential information includes:
 
-- Streamlit only (no React Native for hackathon)
-- One primary action per screen (e.g., "Scan Label")
-- Show st.spinner() during processing
+- MRP
+- Net quantity
+- Manufacturer
+- Packer
+- Importer
+- Country of origin
+- Consumer care information
+- Date-related declarations
+- Product/category information
+- Other applicable declarations
 
-Storage (storage/ - TM5)
+### 6.4 Information Extraction
 
-- SQLite table: inspections (id, timestamp, image_name, result_json, passed)
-- Never store raw images in DB - store filename only
+Convert OCR output into structured data.
 
-Integration (integration/ - TM6)
+Example:
 
-- Orchestrate: detect → crop → OCR → validate → store → return
-- CLI tool: python run_inspection.py path/to/image.jpg
-
-Phases.md:
-LegalMetro-Hackathon: Phased Plan
-
-Phase 0: Foundation (0-2 hrs) - ALL
-
-- Repo setup, .gitignore, requirements.txt
-- Verify: git status works + all deps import
-- Deliverable: Repo cloned, ready to code
-
-Phase 1: Core Pipeline (2-6 hrs) - YOU + TM2 + TM6
-
-- You: YOLOv8 detector + synthetic data generator
-- TM2: OCR processor (grayscale + CLAHE + Tesseract)
-- TM6: Integration script (main.py) linking detect→OCR
-- Deliverable: CLI returns detections + OCR text
-
-Phase 2: Validation & UI (6-12 hrs) - TM3 + TM4 + TM6
-
-- TM3: Rule validator (MRP/quantity regex checks)
-- TM4: Streamlit UI (upload → show boxes + results table)
-- TM6: Add validation + storage to pipeline
-- Deliverable: UI shows PASS/FAIL for MRP/quantity
-
-Phase 3: Storage & History (12-18 hrs) - TM5 + TM4 + TM6
-
-- TM5: SQLite DB (database.py with save/get functions)
-- TM4: History tab in sidebar (recent inspections)
-- TM6: Auto-save results after validation
-- Deliverable: History tab shows past scans
-
-Phase 4: Demo Prep (18-24 hrs) - TM6 + ALL
-
-- TM6: Demo script + sample images (PASS/FAIL/edge cases)
-- TM4: Final UI polish (logo, tooltips, mobile layout)
-- ALL: Create 1-pager cheat sheet + rehearse demo
-- Deliverable: Repeatable 2-minute demo
-
-Stretch Goals (If Time)
-
-- Add manufacturer/date validation
-- Export reports as CSV
-- Deploy as Android APK (Buildozer)
-
-Design.md:
-LegalMetro-Hackathon: Design
-
-Color Palette (WCAG 2.1 AA Compliant)
-
-┌──────────────┬──────────────────┬─────────┬────────────────────────┐
-│    Usage     │      Color       │   Hex   │      When to Use       │
-├──────────────┼──────────────────┼─────────┼────────────────────────┤
-│ Primary      │ Metrology Blue   │ #1976D2 │ Buttons, active states │
-├──────────────┼──────────────────┼─────────┼────────────────────────┤
-│ Success      │ Compliance Green │ #388E3C │ PASS indicators        │
-├──────────────┼──────────────────┼─────────┼────────────────────────┤
-│ Error        │ Alert Amber      │ #F57C00 │ FAIL indicators        │
-├──────────────┼──────────────────┼─────────┼────────────────────────┤
-│ Background   │ Paper White      │ #FAFAFA │ Main canvas, cards     │
-├──────────────┼──────────────────┼─────────┼────────────────────────┤
-│ Text Primary │ Dark Charcoal    │ #212121 │ Body text, labels      │
-└──────────────┴──────────────────┴─────────┴────────────────────────┘
-
-Typography (Use Google Fonts)
-
-- Headers: Roboto Slab (Bold, 24px)
-- Body: Roboto (Regular, 16px)
-- Monospace: Roboto Mono (14px for timestamps/JSON)
-- Implement in Streamlit:
-st.markdown("""
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Roboto+Slab:wght@600&family=Roboto+Mono&display=swap');
-.stApp { font-family: 'Roboto', sans-serif; }
-h1, h2, h3 { font-family: 'Roboto Slab', serif; }
-.code, pre { font-family: 'Roboto Mono', monospace; }
-</style>
-""", unsafe_allow_html=True)
-
-Layout & Components
-
-Scan Screen (Main)
-
-+--------------------------------------------------+
-| [Logo] LegalMetro-Hackathon                      |
-|                                                  |
-|  [📁 Upload]  [📷 Camera]                        |
-|                                                  |
-|  +------------------------------------------+    |
-|  |   [ IMAGE PREVIEW WITH BOXES ]           |    |
-|  +------------------------------------------+    |
-|                                                  |
-|  FIELD     | STATUS  | DETAILS                |
-|  ----------|---------|--------------------------|
-|  MRP       | ✅ PASS | ₹ 199.00                 |
-|  Quantity  | ❌ FAIL | 500 (missing unit)       |
-|  Manufacturer| ✅ PASS| ABC Foods Ltd            |
-|  Date      | ⚠️ UNCERTAIN| 03/24 (low conf)     |
-|                                                  |
-|  [📊 History]  [🔄 Rescan]                        |
-+--------------------------------------------------+
-
-Key UX Rules
-
-- PASS/FAIL: Always show icon + text + color (never color alone)
-- Loading State: st.spinner("Analyzing label...") during processing
-- Error Messages: Actionable (e.g., "Image too blurry - retake with better light")
-- Accessibility:
-  - Minimum 4.5:1 color contrast (use WebAIM checker (https://webaim.org/resources/contrastchecker/))
-  - Touch targets ≥48x48dp
-  - Alt text for all images (e.g., "Label showing MRP ₹199.00")
+```json
+{
+  "mrp": {
+    "value": "₹120",
+    "confidence": 0.94
+  },
+  "net_quantity": {
+    "value": "500 g",
+    "confidence": 0.91
+  },
+  "manufacturer": {
+    "value": "ABC Foods Pvt Ltd",
+    "confidence": 0.88
+  }
+}
