@@ -1,0 +1,28 @@
+# Core dependencies for Legal Metrology Compliance Project
+
+# Detection component (YOLOv8)
+ultralytics>=8.0.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# OCR component (to be used by TM2)
+pytesseract>=0.3.10
+Pillow>=10.0.0
+# easyocr>=1.6.0  # Alternative to Tesseract
+
+# Validation component (to be used by TM3)
+pint>=0.24.0
+
+# UI component (to be used by TM4)
+streamlit>=1.28.0
+
+# Storage component (to be used by TM5)
+# SQLite is built-in with Python
+
+# Integration component (to be used by TM6)
+# No additional dependencies needed beyond above
+
+# Development dependencies
+pytest>=7.0.0
+black>=23.0.0
+flake8>=6.0.0
