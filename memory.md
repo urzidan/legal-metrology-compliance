@@ -65,8 +65,18 @@
 
 #### 🔗 Cross-Team Notes
 - 📝 [Decisions affecting multiple teams]
-  *Example: "Agreed on JSON format: {field: {text: str, conf: float}}"*
-- 🚧 [Pending dependencies]
-  *Example: "TM6 waiting on TM2's OCR confidence for uncertain state UI"*
-- ✅ [Resolved blockers]
-  *Example: "Resolved: TM3 confirmed quantity regex works with 'ml' and 'ML'"*
+  *Example: "Agreed on JSON format: {field: {text: str, conf: float}}"*  
+- 🚧 [Pending dependencies]  
+  *Example: "TM6 waiting on TM2's OCR confidence for uncertain state UI"*  
+- ✅ [Resolved blockers]  
+  *Example: "Resolved: TM3 confirmed quantity regex works with 'ml' and 'ML'"*  
+
+---
+### 📅 2026-09-07
+
+#### 👤 [TM3 Name] / Validation Engine
+- ✅ Implemented validation engine for MRP, quantity, manufacturer, date fields.
+- ✅ Added unit tests covering valid/invalid cases and confidence handling.
+- ✅ Created README documenting API and usage.
+- ✅ Verified integration with pipeline output format from backend/main.py.
+- 📝 Ready for integration into UI and storage layers.

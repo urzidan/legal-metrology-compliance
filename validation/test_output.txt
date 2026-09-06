@@ -1,0 +1,9 @@
+Running validation tests...
+Traceback (most recent call last):
+  File "D:\SIH PROJECT26\legal-metrology-compliance-main\validation\validator.py", line 251, in <module>
+    print(f"{field}: '{text}' -> {result['status']} - {result['details']}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ankita Bhakta\AppData\Local\Python\pythoncore-3.14-64\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u20b9' in position 6: character maps to <undefined>
