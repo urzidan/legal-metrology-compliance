@@ -14,38 +14,36 @@ const statusStyle = {
 
 /**
  * ComplianceTable
- * Renders the OCR-extracted fields next to the Legal Metrology expected
- * values, with a pass/flagged/pending status per row.
- *
+ * Rows of extracted data with status.
  * @param {object} props
- * @param {Array<{parameter:string, detectedValue:string, expectedValue:string, status:'pass'|'flagged'|'pending'}>} props.rows
+ * @param {Array} props.fields - Array of {parameter, detectedValue, expectedValue, status}
  */
-export default function ComplianceTable({ rows = [] }) {
+export default function ComplianceTable({ fields = [] }) {
   return (
     <div className="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden">
       <div className="bg-surface-container-low px-4 py-2 border-b border-outline-variant">
         <h3 className="text-xs font-semibold uppercase tracking-wider text-on-surface-variant">
-          Extracted Data Verification
+          EXTRACTED DATA VERIFICATION
         </h3>
       </div>
       <table className="w-full text-left text-sm">
         <thead className="bg-surface-dim/30">
           <tr>
-            <th className="p-4 font-semibold text-on-surface">Parameter</th>
-            <th className="p-4 font-semibold text-on-surface">Detected Value</th>
-            <th className="p-4 font-semibold text-on-surface">Standard/Expected</th>
-            <th className="p-4 font-semibold text-on-surface">Status</th>
+            <th className="p-4 font-semibold text-on-surface">PARAMETER</th>
+            <th className="p-4 font-semibold text-on-surface">DETECTED VALUE</th>
+            <th className="p-4 font-semibold text-on-surface">STANDARD / EXPECTED</th>
+            <th className="p-4 font-semibold text-on-surface">STATUS</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-outline-variant/50">
-          {rows.length === 0 && (
+          {fields.length === 0 && (
             <tr>
               <td colSpan={4} className="p-4 text-center text-on-surface-variant">
                 No data extracted yet — upload an image to begin.
               </td>
             </tr>
           )}
-          {rows.map((row) => (
+          {fields.map((row) => (
             <tr
               key={row.parameter}
               className={`hover:bg-surface-container-lowest transition-colors ${
