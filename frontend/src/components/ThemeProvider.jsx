@@ -1,0 +1,1 @@
+// This file is no longer used. Theme is managed via useTheme hook in App.jsx and SettingsPage.jsx

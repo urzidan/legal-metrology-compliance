@@ -32,7 +32,7 @@ export default function StickyActionBar({
         <button
           onClick={onGenerateReport}
           disabled={busy}
-          className="bg-surface-container-lowest text-primary px-4 py-2 rounded text-xs font-semibold uppercase tracking-wider border border-outline-variant hover:bg-surface-container-low transition-colors flex items-center gap-2 disabled:opacity-50"
+          className="bg-secondary text-on-secondary px-4 py-2 rounded text-xs font-semibold uppercase tracking-wider border border-outline-variant hover:bg-secondary-container transition-colors disabled:opacity-50"
         >
           <FileText size={16} /> Generate Report
         </button>
@@ -49,7 +49,7 @@ export default function StickyActionBar({
           className="bg-primary text-on-primary px-6 py-2 rounded text-xs font-semibold uppercase tracking-wider hover:bg-primary-container hover:text-on-primary-container transition-colors flex items-center gap-2 disabled:opacity-50"
         >
           {busy ? <Loader2 size={16} className="animate-spin" /> : <CheckCheck size={16} />}
-          Confirm &amp; Log
+          Confirm & Log
         </button>
       </div>
     </div>

@@ -9,8 +9,9 @@ import { Bell, Settings } from "lucide-react";
  * @param {number} props.passRate     - 0-100
  * @param {number} props.pending
  * @param {() => void} [props.onProfileClick]
+ * @param {() => void} [props.onSettingsClick]
  */
-export default function TopNavBar({ totalAudited = 0, passRate = 0, pending = 0, onProfileClick }) {
+export default function TopNavBar({ totalAudited = 0, passRate = 0, pending = 0, onProfileClick, onSettingsClick }) {
   return (
     <header className="sticky top-0 z-50 flex justify-between items-center w-full px-8 py-4 bg-surface border-b border-outline-variant">
       <div className="flex items-center gap-6">
@@ -44,7 +45,7 @@ export default function TopNavBar({ totalAudited = 0, passRate = 0, pending = 0,
         <button aria-label="notifications" className="text-primary hover:bg-surface-container-low p-2 rounded-full transition-colors">
           <Bell size={20} />
         </button>
-        <button aria-label="settings" className="text-primary hover:bg-surface-container-low p-2 rounded-full transition-colors">
+        <button aria-label="settings" className="text-primary hover:bg-surface-container-low p-2 rounded-full transition-colors" onClick={onSettingsClick}>
           <Settings size={20} />
         </button>
         <button

@@ -1,0 +1,22 @@
+# Backend dependencies for PackSure Legal Metrology API
+
+# FastAPI and ASGI
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Core dependencies (from project requirements)
+ultralytics>=8.0.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# OCR dependencies
+pytesseract>=0.3.10
+Pillow>=10.0.0
+
+# For form parsing
+python-multipart>=0.0.6
+
+# Development dependencies
+pytest>=7.0.0
+black>=23.0.0
+flake8>=6.0.0

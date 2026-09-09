@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* CSS Variables for Light and Dark themes */
+:root {
+  --color-primary: #000000;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #131b2e;
+  --color-on-primary-container: #7c839b;
+  --color-secondary: #006c4a;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #82f5c1;
+  --color-on-secondary-container: #00714e;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-background: #f8f9ff;
+  --color-on-background: #0b1c30;
+  --color-surface: #f8f9ff;
+  --color-on-surface: #0b1c30;
+  --color-surface-variant: #45464d;
+  --color-outline: #76777d;
+  --color-outline-variant: #c6c6cd;
+  --color-inverse-surface: #213145;
+  --color-inverse-on-surface: #eaf1ff;
+}
+
+.dark {
+  --color-primary: #ffffff;
+  --color-on-primary: #000000;
+  --color-primary-container: #7c839b;
+  --color-on-primary-container: #131b2e;
+  --color-secondary: #6eedc5;
+  --color-on-secondary: #000000;
+  --color-secondary-container: #00714e;
+  --color-on-secondary-container: #82f5c1;
+  --color-error: #ffb4ab;
+  --color-on-error: #000000;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+  --color-background: #0b1c30;
+  --color-on-background: #f8f9ff;
+  --color-surface: #131b2e;
+  --color-on-surface: #f8f9ff;
+  --color-surface-variant: #45464d;
+  --color-outline: #9ca3af; /* Gray-500 for better visibility in dark theme */
+  --color-outline-variant: #6b7280; /* Gray-600 for better visibility in dark theme */
+  --color-inverse-surface: #eaf1ff;
+  --color-inverse-on-surface: #213145;
+}

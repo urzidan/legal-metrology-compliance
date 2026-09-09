@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import TopNavBar from "./components/TopNavBar";
 import InspectionCanvas from "./components/InspectionCanvas";
 import RiskScoreGauge from "./components/RiskScoreGauge";
@@ -16,6 +17,7 @@ import {
 } from "./api/packsureApi";
 
 export default function PackSureDashboard() {
+  const navigate = useNavigate();
   const [currentImage, setCurrentImage] = useState(null);
   const [inspectionId, setInspectionId] = useState(null);
   const [boundingBoxes, setBoundingBoxes] = useState([]);
@@ -37,25 +39,40 @@ export default function PackSureDashboard() {
   const handleUpload = async (file) => {
     try {
       setIsLoading(true);
-      const data = await uploadInspectionImage(file);
+      // Revoke previous object URL if exists
+      if (currentImage && currentImage.startsWith('blob:')) {
+        URL.revokeObjectURL(currentImage);
+      }
 
-      // Populate states directly from the FastAPI response
-      setCurrentImage(data.imageUrl || URL.createObjectURL(file));
-      setInspectionId(data.inspectionId);
-      setBoundingBoxes(data.boundingBoxes || []);
-      setExtractedFields(data.extractedFields || []);
-      setViolations(data.violations || []);
-      setRiskScore(data.riskScore?.value || 0);
-      setRiskBand(data.riskScore?.band || "");
+      const uploadData = await uploadInspectionImage(file);
+
+      // Determine the image URL to display:
+      // If uploadData.imageUrl is provided and is an object URL, use it.
+      // Otherwise, create an object URL from the file for preview.
+      let imageUrlToUse = uploadData.imageUrl;
+      if (!imageUrlToUse || !imageUrlToUse.startsWith('blob:')) {
+        imageUrlToUse = URL.createObjectURL(file);
+      }
+      setCurrentImage(imageUrlToUse);
+
+      // Fetch the full compliance report to get bounding boxes, etc.
+      const reportData = await fetchComplianceReport(uploadData.inspectionId);
+
+      // Populate states from the compliance report
+      setBoundingBoxes(reportData.boundingBoxes || []);
+      setExtractedFields(reportData.extractedFields || []);
+      setViolations(reportData.violations || []);
+      setRiskScore(reportData.riskScore?.value || 0);
+      setRiskBand(reportData.riskScore?.band || "");
       setAiConfidence(
-        data.aiConfidence ? data.aiConfidence * 100 : 94.0
+        reportData.aiConfidence ? reportData.aiConfidence * 100 : 94.0
       );
 
       setStats((prev) => ({
         ...prev,
         audited: prev.audited + 1,
         passRate: 92.5,
-        pending: (data.violations?.length || 0) > 0 ? prev.pending + 1 : prev.pending,
+        pending: (reportData.violations?.length || 0) > 0 ? prev.pending + 1 : prev.pending,
       }));
     } catch (err) {
       console.error("Inspection error:", err);
@@ -65,6 +82,10 @@ export default function PackSureDashboard() {
   };
   // Complete Reset / Delete handler
   const handleClear = () => {
+    // Revoke object URL if it's an object URL
+    if (currentImage && currentImage.startsWith('blob:')) {
+      URL.revokeObjectURL(currentImage);
+    }
     setCurrentImage(null);
     setInspectionId(null);
     setBoundingBoxes([]);
@@ -100,12 +121,22 @@ export default function PackSureDashboard() {
     await confirmAndLog(inspectionId, {});
   };
 
+  const handleProfileClick = () => {
+    navigate("/profile");
+  };
+
+  const handleSettingsClick = () => {
+    navigate("/settings");
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <TopNavBar
         totalAudited={stats.audited}
         passRate={stats.passRate}
         pending={stats.pending}
+        onProfileClick={handleProfileClick}
+        onSettingsClick={handleSettingsClick}
       />
 
       <main className="flex-1 p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 pb-24">
