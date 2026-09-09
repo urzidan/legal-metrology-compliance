@@ -2,8 +2,8 @@
 // Dual-mode API client: Toggle USE_MOCK to true for instant demoing/testing,
 // or false to route through the live FastAPI backend.
 
-const USE_MOCK = false;
-const BASE_URL = import.meta.env?.VITE_API_BASE_URL || "http://localhost:8000/api/v1";
+const USE_MOCK = true;
+const BASE_URL = import.meta.env?.VITE_API_BASE_URL || "http://localhost:8000";
 
 // In-memory store to simulate active inspection state during mock mode
 let mockInspectionStore = null;
